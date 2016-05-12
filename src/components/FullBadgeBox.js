@@ -96,10 +96,7 @@ export default (props) => {
   });
 
   var badgeCheck = '';
-  if (list.length !== 0) {
-    badgeCheck = BadgeContainer();
-  }
-
+  if (list.length) badgeCheck = BadgeContainer();
   function BadgeContainer () {
     return (
       <div id = "Badge-Container">
