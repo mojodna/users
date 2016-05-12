@@ -96,7 +96,9 @@ export default (props) => {
   });
 
   var badgeCheck = '';
-  if (list.length) badgeCheck = BadgeContainer();
+  if (list.length !== 0) {
+    badgeCheck = BadgeContainer();
+  }
 
   function BadgeContainer () {
     return (
