@@ -4,7 +4,7 @@ Thanks for joining in on the development of Missing Maps. Below is a quick outli
 
 ### Adding new badges
 
-TO DO
+Documentation on adding new badges to the MissingMaps User pages can be [found here](https://github.com/AmericanRedCross/osm-stats/blob/master/documentation/Adding_Badges.md).
 
 ### Report an Issue
 
