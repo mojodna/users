@@ -1,10 +1,9 @@
 import React from 'react';
 import UserSubHead from '../components/UserSubHead';
+import {Link} from 'react-router';
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import fetch from 'isomorphic-fetch';
-import SearchBar from 'react-search-bar';
-import R from 'ramda';
 
 export default React.createClass({
   getInitialState: function () {
@@ -15,7 +14,7 @@ export default React.createClass({
   componentDidMount: function () {
     let component = this;
     var fetch_thisid = Number(this.props.params.id);
-    fetch(`http://missingmaps-api.devseed.com/users`)
+    fetch(`http://osmstats.redcross.org/users`)
       .then(function (response) {
         if (response.status >= 400) {
           throw new Error('Bad response Users Fetch');
@@ -28,7 +27,7 @@ export default React.createClass({
         });
 
         if (usercheck.length > 0) {
-          fetch(`http://missingmaps-api.devseed.com/users/${fetch_thisid}`)
+          fetch(`http://osmstats.redcross.org/users/${fetch_thisid}`)
           .then(function (response) {
             if (response.status >= 400) {
               throw new Error('Bad response User Fetch');
@@ -83,10 +82,10 @@ export default React.createClass({
                       This database began on February 2016, so we haven't picked up any edits by this user yet. If you've just made a contribution, it may take a few minutes to show up. Go do some mapping, then come back and try again!
                     </p>
                     <p>
-                      <a href= "http://www.missingmaps.org/users/#/">&larr; Search for another user</a>
+                      <Link to='/'>&larr; Search for another user</Link>
                     </p>
                     <p>
-                      We also provide instructions if you would like to learn how to contribute to OpenStreetMaps & MissingMaps!
+                      We also provide instructions if you would like to learn how to contribute to OpenStreetMap & MissingMaps!
                     </p>
                     <a href="http://www.missingmaps.org/contribute/">
                     <div className = "button btn-grn">
